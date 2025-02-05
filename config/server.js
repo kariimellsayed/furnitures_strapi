@@ -1,7 +1,11 @@
 module.exports = ({ env }) => ({
-  host: env("HOST", "0.0.0.0"),
-  port: env.int("PORT", 8000), // استخدم 8000 بدلًا من 1337
+  host: "0.0.0.0", // استقبل أي اتصال خارجي
+  port: env.int("PORT", 1337),
   app: {
     keys: env.array("APP_KEYS"),
   },
+  webhooks: {
+    populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
+  },
+  url: env("PUBLIC_URL", ""), // إضافة المتغير الجديد
 });
