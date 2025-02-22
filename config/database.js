@@ -59,7 +59,10 @@ module.exports = ({ env }) => {
         filename: path.join(
           __dirname,
           "..",
-          env("DATABASE_FILENAME", "/data/data.db")
+          env(
+            "DATABASE_FILENAME",
+            "/home/runner/furnitures_strapi/.data/data.db"
+          )
         ),
       },
       useNullAsDefault: true,
